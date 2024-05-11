@@ -4,6 +4,10 @@ terraform {
       source  = "hashicorp/aws"
       version = "5.49.0"
     }
+    null = {
+      source  = "hashicorp/null"
+      version = "3.2.2"
+    }
   }
 }
 
@@ -22,3 +26,5 @@ output "caller_arn" {
 output "caller_user" {
   value = data.aws_caller_identity.current.user_id
 }
+
+resource "null_resource" "example" {}
